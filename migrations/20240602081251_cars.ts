@@ -4,7 +4,7 @@ import type { Knex } from "knex";
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('cars', (table: Knex.TableBuilder) => {
     table.increments('id').primary();
-    table.string('plate', 20).notNullable();
+    table.string('plate', 20).unique().notNullable();
     table.string('name', 50).notNullable();
     table.string('image').notNullable();
     table.integer('rent_cost').unsigned().notNullable(); // unsigned: memastikan nilai tidak negatif
