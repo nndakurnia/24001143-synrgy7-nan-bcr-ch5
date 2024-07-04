@@ -1,9 +1,9 @@
 import express, { Express } from "express";
 import knex from "knex";
 import { Model } from "objection";
+import router from "./routes";
 import dotenv from "dotenv";
 dotenv.config();
-const Router = require("./routes");
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
@@ -25,7 +25,7 @@ const knexInstance = knex({
 
 Model.knex(knexInstance);
 
-app.use(Router);
+app.use("/api", router);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
