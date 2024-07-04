@@ -21,9 +21,10 @@ The API consists of three main endpoints that provide different functions:
 3. Customer API
 
 
-**Base URL:**
+### Base URL:
 
 > <http://localhost:${port}>
+
 
 
 ## 1. Authentication/Authorization API
@@ -59,6 +60,7 @@ POST {{Host}}/api/auth/login
 ```
 
 
+
 ## 2. Admin API
 
 To access the admin API, authorization as admin is required. The token, which is the response from the login endpoint, is used as the authorization header on each Admin endpoint. Admin can CRUD the rental car data and also update the rental status and payment of the rental made by the customer.
@@ -71,7 +73,8 @@ To access the admin API, authorization as admin is required. The token, which is
   | Authorization | "Login response token" |
 
 
-#### Cars Data Management (CRUD)
+
+### Cars Data Management (CRUD)
 
 **Method:**
 
@@ -203,6 +206,7 @@ GET {{Host}}/api/admin/car?type=sedan&name=ford
 }
 ```
 
+
 **Method:**
 
 > POST
@@ -254,6 +258,7 @@ POST {{Host}}/api/admin/car
 }
 ```
 
+
 **Method:**
 
 > PATCH
@@ -297,6 +302,7 @@ PATCH {{Host}}/api/admin/car/1
 }
 ```
 
+
 **Method:**
 
 > DELETE
@@ -313,7 +319,8 @@ DELETE {{Host}}/api/admin/car/1
 }
 ```
 
-#### Rental Management
+
+### Rental Management
 
 > GET
 
@@ -357,8 +364,6 @@ GET {{Host}}/api/admin/rent
 }
 ```
 
-> GET
-
 - **Show Rental By Id**
 
 ```bash
@@ -384,6 +389,7 @@ GET {{Host}}/api/admin/rent/1
   }
 }
 ```
+
 
 **Method:**
 
@@ -423,10 +429,6 @@ PATCH {{Host}}/api/admin/rent/status/1
 }
 ```
 
-**Method:**
-
-> PATCH
-
 - **Updating Rental Payment Status: true || false**
 
 ```bash
@@ -462,6 +464,7 @@ PATCH {{Host}}/api/admin/rent/payment/1
 ```
 
 
+
 ## 3. Customer API
 
 To access the customer API, authorization as customer is required. The token, which is the response from the login endpoint, is used as the authorization header on each customer endpoint. CUstomer can get their rental data and make new rent car.
@@ -474,6 +477,7 @@ To access the customer API, authorization as customer is required. The token, wh
   | Key           | Value                  |
   | ------------- | ---------------------- |
   | Authorization | "Login response token" |
+
 
 
 **Method:**
@@ -545,6 +549,7 @@ GET {{Host}}/api/customer/rent/1
   }
 }
 ```
+
 
 **Method:**
 
